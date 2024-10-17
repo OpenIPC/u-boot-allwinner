@@ -183,7 +183,7 @@ int env_load(void)
 		if (!env_has_inited(drv->location))
 			continue;
 
-		printf("Loading Environment from %s... ", drv->name);
+		printf("Loading Environment from %s...\n", drv->name);
 		/*
 		 * In error case, the error message must be printed during
 		 * drv->load() in some underlying API, and it must be exactly
@@ -259,7 +259,7 @@ int env_save(void)
 	if (drv) {
 		int ret;
 
-		printf("Saving Environment to %s... ", drv->name);
+		printf("Saving Environment to %s...\n", drv->name);
 		if (!drv->save) {
 			printf("not possible\n");
 			return -ENODEV;

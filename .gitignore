@@ -40,7 +40,7 @@
 *.tab.[ch]
 *.ti-*
 # Build tree
-/build*
+/build
 
 #
 # Top-level generic files

@@ -75,6 +75,16 @@
 	status = "okay";
 };
 
+&mmc0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&mmc0_pins>;
+	vmmc-supply = <&reg_3v3>;
+	cd-gpios = <&pio 4 12 GPIO_ACTIVE_LOW>;
+	disable-wp;
+	bus-width = <4>;
+	status = "okay";
+};
+
 &pio {
 	vcc-pb-supply = <&reg_3v3>;
 	vcc-pd-supply = <&reg_3v3>;

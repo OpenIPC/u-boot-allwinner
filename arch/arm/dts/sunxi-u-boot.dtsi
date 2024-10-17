@@ -52,13 +52,20 @@
 					type = "standalone";
 					os = "u-boot";
 					arch = ARCH;
+#if defined(CONFIG_SPL_LZMA)
+					compression = "lzma";
+#else
 					compression = "none";
+#endif
 					load = <CONFIG_TEXT_BASE>;
 #if CONFIG_SUNXI_BL31_BASE == 0
 					entry = <CONFIG_TEXT_BASE>;
 #endif
 
 					u-boot-nodtb {
+#if defined(CONFIG_SPL_LZMA)
+						compress = "lzma";
+#endif
 					};
 				};
 

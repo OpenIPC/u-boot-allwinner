@@ -236,13 +236,13 @@ static int env_sf_save(void)
 
 	sector = DIV_ROUND_UP(CONFIG_ENV_SIZE, sect_size);
 
-	puts("Erasing SPI flash...");
+	puts("Erasing SPI flash...\n");
 	ret = spi_flash_erase(env_flash, CONFIG_ENV_OFFSET,
 		sector * sect_size);
 	if (ret)
 		goto done;
 
-	puts("Writing to SPI flash...");
+	puts("Writing to SPI flash...\n");
 	ret = spi_flash_write(env_flash, CONFIG_ENV_OFFSET,
 		CONFIG_ENV_SIZE, &env_new);
 	if (ret)
@@ -256,7 +256,6 @@ static int env_sf_save(void)
 	}
 
 	ret = 0;
-	puts("done\n");
 
 done:
 	spi_flash_free(env_flash);
